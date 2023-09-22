@@ -40,6 +40,35 @@ function buyConversionAmplifier() {
     }
 }
 
+
+let passiveRadiationRate = 0.1; // Increase this rate with certain upgrades
+let gatherMultiplier = 1; // Multiplier for radiation gathered per click. Upgrades increase this.
+
+// Function to passively increase radiation over time
+function passiveRadiationIncrease() {
+    if (radiation < radiationCap) {
+        radiation += passiveRadiationRate;
+        if (radiation > radiationCap) radiation = radiationCap; // Ensure we don't exceed the cap
+    }
+}
+
+// Function to gather radiation on click
+function gatherRadiation() {
+    if (radiation < radiationCap) {
+        radiation += radiationPerClick * gatherMultiplier; 
+        if (radiation > radiationCap) radiation = radiationCap; // Ensure we don't exceed the cap
+    }
+}
+
+// Function to buy a radiation gather upgrade
+function buyGatherUpgrade() {
+    const cost = 30;  // Example cost for this upgrade
+    if (energy >= cost) {
+        energy -= cost;
+        gatherMultiplier *= 1.5;  // Increase the gather multiplier
+    }
+}
+
 export {
     gatherRadiation,
     convertRadiation,
@@ -49,5 +78,8 @@ export {
     radiationCap,
     energy,
     radiationCollectorCost,
-    conversionAmplifierCost
+    conversionAmplifierCost,
+    passiveRadiationIncrease,
+    buyGatherUpgrade
+
 };

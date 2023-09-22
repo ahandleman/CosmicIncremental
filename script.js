@@ -28,6 +28,11 @@ function updateUI() {
     amplifierCostEl.textContent = conversionAmplifierCost.toFixed(2);
 }
 
+setInterval(() => {
+    passiveRadiationIncrease();
+    updateUI();
+}, 1000);
+
 // Event Listeners
 document.getElementById('gather-radiation').addEventListener('click', () => {
     gatherRadiation();
@@ -49,5 +54,9 @@ document.getElementById('buy-amplifier').addEventListener('click', () => {
     updateUI();
 });
 
+document.getElementById('buy-gather-upgrade').addEventListener('click', () => {
+    buyGatherUpgrade();
+    updateUI();
+});
 // Initial UI setup
 updateUI();
