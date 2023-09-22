@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Incremental</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Radiation Gathering Section -->
+        <section class="radiation-section">
+            <h2>Cosmic Background Radiation</h2>
+            <div class="radiation-display">
+                <span id="radiation-count">0</span> / <span id="radiation-cap">100</span>
+                <button id="gather-radiation">Gather Radiation</button>
+            </div>
+        </section>
+
+        <!-- Energy Conversion Section -->
+        <section class="energy-section">
+            <h2>Energy Conversion</h2>
+            <div class="energy-display">
+                Energy: <span id="energy-count">0</span>
+                <button id="convert-radiation">Convert Radiation to Energy</button>
+            </div>
+        </section>
+
+        <!-- Upgrades Section -->
+        <section class="upgrades-section">
+            <h2>Upgrades</h2>
+            <div class="upgrade radiation-collectors">
+                <button id="buy-collector">Buy Radiation Collector</button>
+                <span>Cost: <span id="collector-cost">10</span> Energy</span>
+            </div>
+            <div class="upgrade conversion-amplifiers">
+                <button id="buy-amplifier">Buy Conversion Amplifier</button>
+                <span>Cost: <span id="amplifier-cost">20</span> Energy</span>
+            </div>
+            <!-- Add more upgrades as necessary -->
+        </section>
+
+        <!-- Prestige Section -->
+        <section class="prestige-section">
+            <h2>Form an Asteroid</h2>
+            <button id="form-asteroid">Prestige</button>
+        </section>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
