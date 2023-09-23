@@ -12,6 +12,11 @@ import {
     conversionAmplifierCost
 } from './energy.js';
 
+const backgroundRadiationEl = document.createElement('span');
+backgroundRadiationEl.id = 'background-radiation-count';
+radiationCapEl.parentElement.insertBefore(backgroundRadiationEl, radiationCapEl);
+
+
 // DOM Elements
 const radiationCountEl = document.getElementById('radiation-count');
 const radiationCapEl = document.getElementById('radiation-cap');
@@ -22,7 +27,8 @@ const amplifierCostEl = document.getElementById('amplifier-cost');
 // Update UI Function
 function updateUI() {
     radiationCountEl.textContent = radiation.toFixed(2);
-    radiationCapEl.textContent = radiationCap.toFixed(2);
+    backgroundRadiationEl.textContent = `(${backgroundRadiation.toFixed(2)})`;
+    radiationCapEl.textContent = backgroundRadiationCap.toFixed(2);
     energyCountEl.textContent = energy.toFixed(2);
     collectorCostEl.textContent = radiationCollectorCost.toFixed(2);
     amplifierCostEl.textContent = conversionAmplifierCost.toFixed(2);
@@ -60,3 +66,9 @@ document.getElementById('buy-gather-upgrade').addEventListener('click', () => {
 });
 // Initial UI setup
 updateUI();
+
+setInterval(() => {
+    accumulateBackgroundRadiation();
+    updateUI();
+}, 1000); // Update every second
+
