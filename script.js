@@ -12,17 +12,15 @@ import {
     conversionAmplifierCost
 } from './energy.js';
 
-const backgroundRadiationEl = document.createElement('span');
-backgroundRadiationEl.id = 'background-radiation-count';
-radiationCapEl.parentElement.insertBefore(backgroundRadiationEl, radiationCapEl);
-
-
 // DOM Elements
 const radiationCountEl = document.getElementById('radiation-count');
 const radiationCapEl = document.getElementById('radiation-cap');
 const energyCountEl = document.getElementById('energy-count');
 const collectorCostEl = document.getElementById('collector-cost');
 const amplifierCostEl = document.getElementById('amplifier-cost');
+const backgroundRadiationEl = document.createElement('span');
+backgroundRadiationEl.id = 'background-radiation-count';
+radiationCapEl.parentElement.insertBefore(backgroundRadiationEl, radiationCapEl);
 
 // Update UI Function
 function updateUI() {
