@@ -1,13 +1,18 @@
 // Main Game Script
 
 import {
+    accumulateBackgroundRadiation,
     gatherRadiation,
     convertRadiation,
     buyRadiationCollector,
     buyConversionAmplifier,
+    upgradeBackgroundRadiationCap,
+    upgradeGatheringRate,
     radiation,
     radiationCap,
     energy,
+    backgroundRadiation,
+    backgroundRadiationCap,
     radiationCollectorCost,
     conversionAmplifierCost
 } from './energy.js';
